@@ -1,10 +1,9 @@
 import {Router} from 'express';
+import  {EmployeeController} from '../controllers/employeesController.js';
 
 const employeeRouter = Router();
 
-employeeRouter.get('/', (req, res) => {
-    res.send('employees');
-});
+employeeRouter.get('/', EmployeeController.getAll);
 
 employeeRouter.post('/', (req, res) => {
     res.send('create employee');
