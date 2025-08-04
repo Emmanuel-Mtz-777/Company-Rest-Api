@@ -1,12 +1,12 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import employeeRouter from './routes/employes/employeRoutes.js';
+import employeeRouter from './routes/employeRoutes.js';
 
 const app = express()
 dotenv.config()
 app.use(express.json())
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.SERVER_PORT || 3000
 
 app.use('/employees', employeeRouter);
 
