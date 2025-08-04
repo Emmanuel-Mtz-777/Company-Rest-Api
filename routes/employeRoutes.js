@@ -4,23 +4,16 @@ import  {EmployeeController} from '../controllers/employeesController.js';
 const employeeRouter = Router();
 
 employeeRouter.get('/', EmployeeController.getAll);
-
-employeeRouter.post('/', (req, res) => {
-    res.send('create employee');
-});
+employeeRouter.get('/:id', EmployeeController.getById);
+employeeRouter.post('/', EmployeeController.create);
 
 
-employeeRouter.put('/', (req, res) => {
-    res.send('update employee');
-});
+employeeRouter.put('/:id',EmployeeController.update);
 
-employeeRouter.patch('/', (req, res) => {
-    res.send('Change data employee');
-});
+employeeRouter.patch('/:id',EmployeeController.patch );
 
-employeeRouter.delete('/', (req, res) => {
-    res.send('delete employee');
-});
+
+employeeRouter.delete('/:id', EmployeeController.delete);
 
 
 export default employeeRouter;
