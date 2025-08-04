@@ -1,13 +1,149 @@
+### Employes
 GET http://localhost:3000/employees
+
+### 
+GET http://localhost:3000/employees/9
 
 ###
 POST http://localhost:3000/employees
+Content-Type: application/json
+
+{
+    "first_name": "Carlos",
+    "last_name": "García",
+    "email": "carlotes.garcia@example.com",
+    "phone": "5543345671",
+    "hire_date": "2025-08-04",
+    "salary": 25000.50,
+    "department_id": 1
+}
+
 
 ###
-PUT http://localhost:3000/employees
+PUT http://localhost:3000/employees/9
+Content-Type: application/json
+
+{
+    "first_name": "Javier",
+    "last_name": "Alvares",
+    "email": "Alvares.xd@example.com",
+    "phone": "5543345672",
+    "hire_date": "2025-08-03",
+    "salary": 25000.50,
+    "department_id": 2
+}
 
 ###
-PATCH http://localhost:3000/employees
+PATCH http://localhost:3000/employees/9
+Content-Type: application/json
+
+{
+    "email": "Pepito.xd@example.com"
+}
 
 ###
-DELETE http://localhost:3000/employees  
+DELETE http://localhost:3000/employees/1  
+
+
+### Departaments
+GET http://localhost:3000/departments
+
+###
+
+GET http://localhost:3000/departments/4
+
+###
+POST http://localhost:3000/departments
+Content-Type: application/json
+
+{
+    "name": "RH"
+}
+
+
+###
+PUT http://localhost:3000/departments/4
+Content-Type: application/json
+
+{
+    "name": "RH"
+}
+
+###
+DELETE http://localhost:3000/departments/3
+
+###Positions
+GET http://localhost:3000/positions
+
+###
+GET http://localhost:3000/positions/1
+
+###
+POST http://localhost:3000/positions
+Content-Type: application/json
+
+{
+    "title": "Empleado general"
+}
+###
+Patch http://localhost:3000/positions/2
+Content-Type: application/json
+
+{
+    "title": "Gerente"
+}
+
+###
+DELETE http://localhost:3000/positions/10
+
+###Employee Positions
+GET http://localhost:3000/employeePosition
+
+###
+GET http://localhost:3000/employeePosition/1
+
+###
+POST http://localhost:3000/employeePosition
+Content-Type: application/json
+
+{
+    "employee_id":6,
+    "position_id":11,
+    "start_date":"2025-08-03"
+}
+###
+Patch http://localhost:3000/employeePosition/2
+Content-Type: application/json
+
+{
+    "end_date": "2024-06-12"
+}
+
+###
+DELETE http://localhost:3000/employeePosition/2
+
+###Attendance
+GET http://localhost:3000/attendance
+
+###
+GET http://localhost:3000/attendance/1
+
+###
+POST http://localhost:3000/attendance
+Content-Type: application/json
+
+{
+    "employee_id":6,
+    "date":"2025-08-03",
+    "status":"present"
+}
+###
+Patch http://localhost:3000/attendance/1
+Content-Type: application/json
+
+{
+    "status":"vacation"
+}
+
+###
+DELETE http://localhost:3000/attendance/1
